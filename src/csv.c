@@ -34,7 +34,7 @@ void init_csvrec_file(char* filename)
     return;
   }
 
-  linecount = 1;
+  linecount = 0;
   char text[256];
   while (fgets(text, sizeof(text), fp) != NULL) {
     linecount++;
@@ -49,7 +49,7 @@ void csvrec_append(result_t result)
     return;
   }
 
-  fprintf(fp, "%d,%d,%f,%.2f,%.2f\n", result.type_count, result.typo_count, result.time, result.tps, result.accuracy);
+  fprintf(fp, "%d,%d,%f,%.2f,%.3f\n", result.type_count, result.typo_count, result.time, result.tps, result.accuracy);
   linecount++;
 
   fclose(fp);
