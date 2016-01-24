@@ -112,6 +112,7 @@ void scene_menu()
         break;
 
       case 1:
+        scene_record();
         break;
 
       case 2:
