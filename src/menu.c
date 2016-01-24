@@ -13,7 +13,6 @@ struct menu_t menu_items[] = {
   {"Typing", true},
   {"My Records", false},
   {"Internet Ranking", false},
-  {"Help", false},
   {"Exit", false}
 };
 int menu_items_size = sizeof(menu_items) / sizeof(struct menu_t);
@@ -120,9 +119,6 @@ void scene_menu()
         break;
 
       case 3:
-        break;
-
-      case 4:
         do_exit = true;
         break;
       }
