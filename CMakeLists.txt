@@ -9,6 +9,7 @@ add_executable(TermType
     src/menu.c
     src/typing.c
     src/result.c
+    src/ir.c
     src/word.c
     src/api.c
 )

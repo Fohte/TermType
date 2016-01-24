@@ -116,6 +116,7 @@ void scene_menu()
         break;
 
       case 2:
+        scene_ir();
         break;
 
       case 3:
