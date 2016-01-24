@@ -3,16 +3,17 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <sys/time.h>
+#include <stdbool.h>
 
 const char* START_MSG = "Press the Space Key";
-char* progressbar;
 char* type_string;
 int VIEW_TYPE_STRING_NUM = 30;
 
-int TYPING_TEXTS_NUM = 30;
+int TYPING_TEXTS_NUM = 20;
 char** typing_texts;
 
-result_t result = { 0 };
+result_t result;
+
 
 void concat_typing_texts()
 {
@@ -82,7 +83,6 @@ void game()
   concat_typing_texts();
   length = strlen(type_string);
 
-
   wclear(current_window);
   // いろいろUI表示する
   wrefresh(current_window);
@@ -98,6 +98,9 @@ void game()
   mvwprintw(current_window, LINES / 2, typecursor_x, view_type_string);
   mvwprintw(current_window, LINES / 2 + 1, typecursor_x, "*");
   wrefresh(current_window);
+
+  result.type_count = 0;
+  result.typo_count = 0;
 
   while (type_correct_count != length && (c = getch()) != 27) {
     result.type_count++;
@@ -146,7 +149,9 @@ void scene_typing()
   while (getch() != ' ') { }
 
   countdown(3);
+
   game();
+
   delwin(current_window);
   scene_result(result);
 }
