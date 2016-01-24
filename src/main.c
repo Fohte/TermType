@@ -1,5 +1,6 @@
 #include <stdlib.h>
 #include <ncurses.h>
+#include "csv.h"
 #include "word.h"
 #include "scene.h"
 #include "api.h"
@@ -20,6 +21,7 @@ int main(int argc, char** argv)
   setting();
 
   init_typing_words("resources/en/words");
+  init_csvrec_file("data/record.csv");
 
   scene_menu();
 

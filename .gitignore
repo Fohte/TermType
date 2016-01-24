@@ -2,6 +2,7 @@
 *.out
 *.o
 TermType
+data
 
 # cmake
 CMakeCache.txt
