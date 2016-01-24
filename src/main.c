@@ -2,6 +2,7 @@
 #include <ncurses.h>
 #include "word.h"
 #include "scene.h"
+#include "api.h"
 
 void setting()
 {
@@ -11,12 +12,13 @@ void setting()
   keypad(stdscr, TRUE);
 }
 
-int main()
+int main(int argc, char** argv)
 {
+  server_address = argv[1];
   current_window = initscr();
 
   setting();
-  
+
   init_typing_words("resources/en/words");
 
   scene_menu();

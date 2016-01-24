@@ -10,5 +10,6 @@ add_executable(TermType
     src/typing.c
     src/result.c
     src/word.c
+    src/api.c
 )
 target_link_libraries(TermType ${CURSES_LIBRARY})
